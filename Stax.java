@@ -18,10 +18,36 @@ public class Stax {
 		
 		System.out.println("gimme a number (in digits)");
 		
-		int numbah = Integer.parseInt(br.readLine());
+		String numbahString = br.readLine();
+		int numbah = Integer.parseInt(numbahString);
 		
 		MrCoxallStack stackOne = new MrCoxallStack();
 		stackOne.push(numbah);
+		
+		
+		for (int counter = 0; counter > -1; counter++) {
+			
+			System.out.println("gimme a number (in digits), if ya wanna pop it type pop");
+			
+			numbahString = br.readLine();
+			
+			if (numbahString.equals("pop")) {
+				// when the user inputs pop 
+				System.out.println(stackOne.pop());
+				
+			} else {
+				
+				numbah = Integer.parseInt(numbahString);
+				
+				//stackOne = new MrCoxallStack();
+				stackOne.push(numbah);
+				
+			}
+			
+		}
+		
+
+		
 		
 	}
 
