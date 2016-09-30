@@ -16,7 +16,18 @@ public class MrCoxallStack {
 		 al.add(numbah);
 		
 	}
-
+	
+	public int pop(){
+		
+		int lastIndex =	al.size() - 1; 
+		
+		int returnValue = al.get(lastIndex);
+		
+		al.remove(lastIndex);
+		
+		return returnValue;
+		
+	}
 	
 	
 }
