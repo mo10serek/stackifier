@@ -5,25 +5,37 @@
  *
  ****************************************************************************/
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
-public class MrCoxallStack {
+public class MrCoxallStack<Item> {
 
-	ArrayList<Integer> al = new ArrayList<Integer>();
+	
+	ArrayList<Item> al = new ArrayList<Item>();
 	
 	
-	public void push (int numbah) {
+	public void push (Item numbah) {
 		
 		 al.add(numbah);
 		
 	}
 	
-	public int pop(){
+	public Item pop(){
 		
-		int lastIndex =	al.size() - 1; 
+		Item returnValue;
 		
-		int returnValue = al.get(lastIndex);
+		if (al.size() == 0) {
+			
+			throw new EmptyStackException();
+			
+		} else {
 		
-		al.remove(lastIndex);
+			int lastIndex =	al.size() - 1; 
+		
+			returnValue = al.get(lastIndex);
+		
+			al.remove(lastIndex);
+		
+		}
 		
 		return returnValue;
 		
